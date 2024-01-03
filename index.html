@@ -53,7 +53,7 @@
         white-space: pre-line;
       }
 
-      .admin-message {
+      .AI-message {
         background-color: #f0f0f0;
         color: #333;
         border-radius: 12px;
@@ -64,7 +64,7 @@
       }
 
       .user-avatar,
-      .admin-avatar {
+      .AI-avatar {
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -80,7 +80,7 @@
         color: #fff;
       }
 
-      .admin-avatar {
+      .AI-avatar {
         background-color: #f0f0f0;
         color: #333;
       }
@@ -102,7 +102,7 @@
         background: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
-        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-y: auto; 
       }
 
       #modal-content {
@@ -149,6 +149,12 @@
         color: #00f;
         text-decoration: underline;
       }
+
+      #openMailerLite {
+      cursor: pointer;
+      color: #00f;
+      text-decoration: underline;
+    }
     </style>
   </head>
   <body>
@@ -159,10 +165,10 @@
     </div>
 
     <div id="chatbox-body">
-      <!-- Messages will be dynamically added here -->
+
     </div>
 
-    <!-- Modal for "See More" content -->
+
     <div id="modal-container">
       <div id="modal-content">
         <span id="close-modal" onclick="closeModal()">&times;</span>
@@ -226,32 +232,30 @@
             streamlining and human augmentation in the loop.
           </p>
           <br /><br />
-          <a
-            >Subscribe here to receive an email notification upon our full
-            launch.</a
-          >
+          <p id="openMailerLite">Subscribe here to receive an email notification upon our full
+            launch.</p>
         </div>
       </div>
     </div>
 
     <script>
-      // Initial Introduction Animation
+      
       const introContainer = document.getElementById("intro-container");
       setTimeout(() => {
         introContainer.style.opacity = 1;
         introContainer.style.transform = "translateY(0)";
       }, 100);
 
-      // Message Animation
+   
       const messages = [
-        '<div class="admin-avatar">AS</div><div class="admin-message">Welcome to the AI Studio! How can I assist you today?</div>',
+        '<div class="AI-avatar">AI</div><div class="AI-message">Welcome to the AI Studio! How can I assist you today?</div>',
         '<div class="user-avatar">U</div><div class="user-message">I want to set an AI agent to handle customer inquiries.</div>',
-        '<div class="admin-avatar">AS</div><div class="admin-message">Please specify the intent and actions you\'d like for the AI agent to handle.</div>',
+        '<div class="AI-avatar">AI</div><div class="AI-message">Please specify the intent and actions you\'d like for the AI agent to handle.</div>',
         '<div class="user-avatar">U</div><div class="user-message">I need the agent to do two things with our linked Shopify. First up, let customers easily track their orders with the tracking number. Also, make sure the agent checks the inventory and suggests alternatives if a specific item is not in stock.</div>',
-        '<div class="admin-avatar">AS</div><div class="admin-message">Confirmed! Action intents are now set as "track_order" and "check_inventory" through Shopify integration. Any other requirements?</div>',
+        '<div class="AI-avatar">AI</div><div class="AI-message">Confirmed! Action intents are now set as "track_order" and "check_inventory" through Shopify integration. Any other requirements?</div>',
         '<div class="user-avatar">U</div><div class="user-message">No, that covers it for now.</div>',
-        '<div class="admin-avatar">AS</div><div class="admin-message">Agent configuration was applied to your channels in the current workspace.</div>',
-        '<div class="admin-avatar">AS</div><div class="admin-message"><span class="learn-more-link" onclick="showLearnMore()">Learn More</span></div>',
+        '<div class="AI-avatar">AI</div><div class="AI-message">Agent configuration was applied to your channels in the current workspace.</div>',
+        '<div class="AI-avatar">AI</div><div class="AI-message"><span class="learn-more-link" onclick="showLearnMore()">Learn More</span></div>',
       ];
 
       function showMessage(message, delay) {
@@ -266,7 +270,7 @@
           setTimeout(() => {
             chatMessage.style.opacity = 1;
             chatMessage.style.transform = "translateY(0)";
-          }, 1000); // Adjust the duration for a more stylish appearance
+          }, 1000); 
         }, delay);
       }
 
@@ -280,17 +284,16 @@
       function showLearnMore() {
         clearMessages();
 
-        const aiStudioMessage = `<div class="admin-avatar">AS</div><div class="admin-message">That\'s how easy it is to build AI for your business with our AI Studio.<br><span class="see-more-link" onclick="showSeeMore()">See More</span></div>`;
+        const aiStudioMessage = `<div class="AI-avatar">AI</div><div class="AI-message">That\'s how easy it is to build AI for your business with our AI Studio.<br><span class="see-more-link" onclick="showSeeMore()">See More</span></div>`;
 
         showMessage(aiStudioMessage, 0);
       }
 
       function showSeeMore() {
-        // Display the modal
         const modalContainer = document.getElementById("modal-container");
         modalContainer.style.display = "flex";
 
-        // Add event listener to close the modal
+        
         const closeModalButton = document.getElementById("close-modal");
         closeModalButton.addEventListener("click", () => {
           modalContainer.style.display = "none";
@@ -302,7 +305,7 @@
         modalContainer.style.display = "none";
       }
 
-      // Delay to start message animation after introduction
+
       setTimeout(() => {
         introContainer.style.opacity = 0;
         introContainer.style.transform = "translateY(20px)";
@@ -312,11 +315,31 @@
           document.getElementById("chatbox-body").style.display = "block";
 
           messages.forEach((message, index) => {
-            showMessage(message, index * 2000); // Adjust the delay for a slower appearance
+            showMessage(message, index * 2000); 
           });
-        }, 1000); // Adjust the delay according to your preference
-      }, 3000); // Adjust the delay according to your preference
+        }, 1000); 
+      }, 3000); 
+
+      function openMailerLite() {
+      
+      const script = document.createElement('script');
+      script.innerHTML = `
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '752494');
+      `;
+
+    
+      document.body.appendChild(script);
+    }
+
+    
+      document.getElementById('openMailerLite').addEventListener('click', openMailerLite);
+
     </script>
   </body>
 </html>
+
 

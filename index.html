@@ -3,6 +3,13 @@
   <head>
     <title>Elasti AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '752494');
+    </script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
@@ -180,7 +187,7 @@
             Our platform encrypts all your data, including third-party channels
             conversations, AI queries, files, and vector embeddings. You are the
             only one who holds the encryption keys, ensuring not even we can see
-            your data. Our in-house developed AI models eliminate the need for
+            your data. Our in-house refined and hosted AI models eliminate the need for
             third-party processors, providing you with a secure and reliable AI
             experience.
           </p>
@@ -232,8 +239,7 @@
             streamlining and human augmentation in the loop.
           </p>
           <br /><br />
-          <p id="openMailerLite">Subscribe here to receive an email notification upon our full
-            launch.</p>
+          <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', '9HTXmF', true)">Subscribe here to receive an email notification upon our launch.</a>
         </div>
       </div>
     </div>
@@ -319,24 +325,6 @@
           });
         }, 1000); 
       }, 3000); 
-
-      function openMailerLite() {
-      
-      const script = document.createElement('script');
-      script.innerHTML = `
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '752494');
-      `;
-
-    
-      document.body.appendChild(script);
-    }
-
-    
-      document.getElementById('openMailerLite').addEventListener('click', openMailerLite);
 
     </script>
   </body>
